@@ -1,0 +1,11 @@
+package joelbits.model.ast;
+
+import joelbits.model.visitors.Visitor;
+
+/**
+ * Any time a call to accept answers false, it signals the parent node's accept method to stop
+ * processing children at that level in the tree.
+ */
+public interface ASTNode {
+    boolean accept(Visitor visitor);
+}
