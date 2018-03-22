@@ -3842,6 +3842,10 @@ public final class ASTProtos {
        * <code>CONDITIONAL = 8;</code>
        */
       CONDITIONAL(8),
+      /**
+       * <code>RETURN_VALUE = 9;</code>
+       */
+      RETURN_VALUE(9),
       UNRECOGNIZED(-1),
       ;
 
@@ -3881,6 +3885,10 @@ public final class ASTProtos {
        * <code>CONDITIONAL = 8;</code>
        */
       public static final int CONDITIONAL_VALUE = 8;
+      /**
+       * <code>RETURN_VALUE = 9;</code>
+       */
+      public static final int RETURN_VALUE_VALUE = 9;
 
 
       public final int getNumber() {
@@ -3910,6 +3918,7 @@ public final class ASTProtos {
           case 6: return METHODCALL;
           case 7: return CAST;
           case 8: return CONDITIONAL;
+          case 9: return RETURN_VALUE;
           default: return null;
         }
       }
@@ -12259,44 +12268,44 @@ public final class ASTProtos {
       "s.Declaration\022%\n\tmodifiers\030\004 \003(\0132\022.joelb" +
       "its.Modifier\022\"\n\006fields\030\005 \003(\0132\022.joelbits." +
       "Variable\022!\n\007methods\030\006 \003(\0132\020.joelbits.Met" +
-      "hod\022\037\n\007parents\030\007 \003(\0132\016.joelbits.Type\"\223\003\n" +
+      "hod\022\037\n\007parents\030\007 \003(\0132\016.joelbits.Type\"\245\003\n" +
       "\nExpression\0221\n\004type\030\001 \001(\0162#.joelbits.Exp" +
       "ression.ExpressionType\022\017\n\007literal\030\002 \001(\t\022" +
       "\016\n\006method\030\003 \001(\t\022\020\n\010variable\030\004 \001(\t\022.\n\020met" +
       "hod_arguments\030\005 \003(\0132\024.joelbits.Expressio" +
       "n\0221\n\025variable_declarations\030\006 \003(\0132\022.joelb" +
       "its.Variable\022&\n\nannotation\030\007 \001(\0132\022.joelb" +
-      "its.Modifier\"\223\001\n\016ExpressionType\022\013\n\007LITER" +
+      "its.Modifier\"\245\001\n\016ExpressionType\022\013\n\007LITER" +
       "AL\020\000\022\007\n\003NEW\020\001\022\n\n\006ASSIGN\020\002\022\t\n\005OTHER\020\003\022\017\n\013" +
       "TYPECOMPARE\020\004\022\030\n\024VARIABLE_DECLARATION\020\005\022" +
       "\016\n\nMETHODCALL\020\006\022\010\n\004CAST\020\007\022\017\n\013CONDITIONAL" +
-      "\020\010\"\336\001\n\006Method\022\014\n\004name\030\001 \001(\t\022%\n\targuments" +
-      "\030\002 \003(\0132\022.joelbits.Variable\022#\n\013return_typ" +
-      "e\030\003 \001(\0132\016.joelbits.Type\022%\n\tmodifiers\030\004 \003" +
-      "(\0132\022.joelbits.Modifier\022\'\n\017exception_type" +
-      "s\030\005 \003(\0132\016.joelbits.Type\022*\n\014body_content\030" +
-      "\006 \003(\0132\024.joelbits.Expression\"\344\002\n\010Modifier" +
-      "\022\014\n\004name\030\001 \001(\t\022-\n\004type\030\002 \001(\0162\037.joelbits." +
-      "Modifier.ModifierType\022\032\n\022members_and_val" +
-      "ues\030\003 \003(\t\0225\n\nvisibility\030\004 \001(\0162!.joelbits" +
-      ".Modifier.VisibilityType\022\r\n\005other\030\005 \001(\t\"" +
-      "p\n\014ModifierType\022\014\n\010ABSTRACT\020\000\022\016\n\nANNOTAT" +
-      "ION\020\001\022\t\n\005FINAL\020\002\022\n\n\006STATIC\020\003\022\020\n\014SYNCHRON" +
-      "IZED\020\004\022\016\n\nVISIBILITY\020\005\022\t\n\005OTHER\020\006\"G\n\016Vis" +
-      "ibilityType\022\r\n\tNAMESPACE\020\000\022\n\n\006PUBLIC\020\001\022\r" +
-      "\n\tPROTECTED\020\002\022\013\n\007PRIVATE\020\003\"m\n\tNamespace\022" +
-      "\014\n\004name\030\001 \001(\t\022+\n\014declarations\030\002 \003(\0132\025.jo" +
-      "elbits.Declaration\022%\n\tmodifiers\030\003 \003(\0132\022." +
-      "joelbits.Modifier\"\210\001\n\010Variable\022\014\n\004name\030\001" +
-      " \001(\t\022\034\n\004type\030\002 \001(\0132\016.joelbits.Type\022)\n\013in" +
-      "itializer\030\003 \001(\0132\024.joelbits.Expression\022%\n" +
-      "\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier\"=\n\004" +
-      "Type\022\014\n\004name\030\001 \001(\t\022\'\n\004type\030\002 \001(\0162\031.joelb" +
-      "its.DeclarationType*l\n\017DeclarationType\022\t" +
-      "\n\005CLASS\020\000\022\r\n\tANONYMOUS\020\001\022\016\n\nANNOTATION\020\002" +
-      "\022\r\n\tINTERFACE\020\003\022\013\n\007GENERIC\020\004\022\010\n\004ENUM\020\005\022\t" +
-      "\n\005OTHER\020\006B(\n\033joelbits.model.ast.protobuf" +
-      "B\tASTProtosb\006proto3"
+      "\020\010\022\020\n\014RETURN_VALUE\020\t\"\336\001\n\006Method\022\014\n\004name\030" +
+      "\001 \001(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits.Vari" +
+      "able\022#\n\013return_type\030\003 \001(\0132\016.joelbits.Typ" +
+      "e\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier" +
+      "\022\'\n\017exception_types\030\005 \003(\0132\016.joelbits.Typ" +
+      "e\022*\n\014body_content\030\006 \003(\0132\024.joelbits.Expre" +
+      "ssion\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type" +
+      "\030\002 \001(\0162\037.joelbits.Modifier.ModifierType\022" +
+      "\032\n\022members_and_values\030\003 \003(\t\0225\n\nvisibilit" +
+      "y\030\004 \001(\0162!.joelbits.Modifier.VisibilityTy" +
+      "pe\022\r\n\005other\030\005 \001(\t\"p\n\014ModifierType\022\014\n\010ABS" +
+      "TRACT\020\000\022\016\n\nANNOTATION\020\001\022\t\n\005FINAL\020\002\022\n\n\006ST" +
+      "ATIC\020\003\022\020\n\014SYNCHRONIZED\020\004\022\016\n\nVISIBILITY\020\005" +
+      "\022\t\n\005OTHER\020\006\"G\n\016VisibilityType\022\r\n\tNAMESPA" +
+      "CE\020\000\022\n\n\006PUBLIC\020\001\022\r\n\tPROTECTED\020\002\022\013\n\007PRIVA" +
+      "TE\020\003\"m\n\tNamespace\022\014\n\004name\030\001 \001(\t\022+\n\014decla" +
+      "rations\030\002 \003(\0132\025.joelbits.Declaration\022%\n\t" +
+      "modifiers\030\003 \003(\0132\022.joelbits.Modifier\"\210\001\n\010" +
+      "Variable\022\014\n\004name\030\001 \001(\t\022\034\n\004type\030\002 \001(\0132\016.j" +
+      "oelbits.Type\022)\n\013initializer\030\003 \001(\0132\024.joel" +
+      "bits.Expression\022%\n\tmodifiers\030\004 \003(\0132\022.joe" +
+      "lbits.Modifier\"=\n\004Type\022\014\n\004name\030\001 \001(\t\022\'\n\004" +
+      "type\030\002 \001(\0162\031.joelbits.DeclarationType*l\n" +
+      "\017DeclarationType\022\t\n\005CLASS\020\000\022\r\n\tANONYMOUS" +
+      "\020\001\022\016\n\nANNOTATION\020\002\022\r\n\tINTERFACE\020\003\022\013\n\007GEN" +
+      "ERIC\020\004\022\010\n\004ENUM\020\005\022\t\n\005OTHER\020\006B(\n\033joelbits." +
+      "model.ast.protobufB\tASTProtosb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -37,6 +37,7 @@ message Expression {
         METHODCALL = 6;
         CAST = 7;
         CONDITIONAL = 8;
+        RETURN_VALUE = 9;
     }
 }
 
