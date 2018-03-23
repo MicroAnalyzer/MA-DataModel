@@ -3,12 +3,10 @@ package joelbits.modules.analysis.converters;
 import com.google.protobuf.InvalidProtocolBufferException;
 import joelbits.model.ast.*;
 import joelbits.model.ast.protobuf.ASTProtos;
-import joelbits.model.ast.types.DeclarationType;
-import joelbits.model.ast.types.ExpressionType;
-import joelbits.model.ast.types.ModifierType;
-import joelbits.model.ast.types.VisibilityType;
+import joelbits.model.ast.types.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,7 +42,7 @@ public class ASTConverter {
         return new Modifier(modifier.getName(), type, modifier.getMembersAndValuesList(), visibilityType, modifier.getOther());
     }
 
-    public static Expression convertExpression(ASTProtos.Expression expression) {
+    private static Expression convertExpression(ASTProtos.Expression expression) {
         String literal = expression.getLiteral();
         String method = expression.getMethod();
         String variable = expression.getVariable();
@@ -126,9 +124,42 @@ public class ASTConverter {
             arguments.add(convertField(argument));
         }
 
+        List<Statement> statements = new ArrayList<>();
+        for (ASTProtos.Statement statement : method.getStatementsList()) {
+            statements.add(convertStatement(statement));
+        }
+
         List<Expression> bodyContent = new ArrayList<>();
 
-        return new Method(method.getName(), arguments, convertType(method.getReturnType()), modifiers, bodyContent);
+        return new Method(method.getName(), arguments, convertType(method.getReturnType()), modifiers, bodyContent, statements);
+    }
+
+    private static Statement convertStatement(ASTProtos.Statement statement) {
+        StatementType type = StatementType.valueOf(statement.getType().name());
+
+        List<Expression> expressions = new ArrayList<>();
+        for (ASTProtos.Expression expression : statement.getExpressionsList()) {
+            expressions.add(convertExpression(expression));
+        }
+
+        List<Expression> initializations = new ArrayList<>();
+        for (ASTProtos.Expression initialization : statement.getInitializationsList()) {
+            initializations.add(convertExpression(initialization));
+        }
+
+        List<Expression> updates = new ArrayList<>();
+        for (ASTProtos.Expression update : statement.getUpdatesList()) {
+            updates.add(convertExpression(update));
+        }
+
+        List<Statement> nestedStatements = new ArrayList<>();
+        for (ASTProtos.Statement nestedStatement : statement.getStatementsList()) {
+            nestedStatements.add(convertNestedStatement(statement));
+        }
+
+        Expression condition = convertExpression(statement.getCondition());
+
+        return new Statement(type, expressions, condition, nestedStatements, initializations, updates);
     }
 
     private static Declaration convertNestedDeclaration(ASTProtos.Declaration declaration) {
@@ -155,5 +186,28 @@ public class ASTConverter {
         }
 
         return new Declaration(declaration.getName(), new ArrayList<>(), modifiers, type, fields, methods, parents);
+    }
+
+    private static Statement convertNestedStatement(ASTProtos.Statement statement) {
+        StatementType type = StatementType.valueOf(statement.getType().name());
+
+        List<Expression> expressions = new ArrayList<>();
+        for (ASTProtos.Expression expression : statement.getExpressionsList()) {
+            expressions.add(convertExpression(expression));
+        }
+
+        List<Expression> initializations = new ArrayList<>();
+        for (ASTProtos.Expression initialization : statement.getInitializationsList()) {
+            initializations.add(convertExpression(initialization));
+        }
+
+        List<Expression> updates = new ArrayList<>();
+        for (ASTProtos.Expression update : statement.getUpdatesList()) {
+            updates.add(convertExpression(update));
+        }
+
+        Expression condition = convertExpression(statement.getCondition());
+
+        return new Statement(type, expressions, condition, Collections.emptyList(), initializations, updates);
     }
 }

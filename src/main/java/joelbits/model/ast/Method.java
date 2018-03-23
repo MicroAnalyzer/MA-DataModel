@@ -13,14 +13,16 @@ public final class Method implements ASTNode {
     private final List<Variable> arguments;           // The arguments of the method
     private final Type returnType;                    // The type returned from the method; if the method returns nothing, this type will be void
     private final List<Modifier> modifiers;           // A list of all modifiers on the method
-    private final List<Expression> bodyContent;       // A list of all expressions within the method body
+    private final List<Expression> bodyContent;       // A list of all top level expressions within the method body
+    private final List<Statement> statements;         // The body content as statements found within the method body
 
-    public Method(String name, List<Variable> arguments, Type returnType, List<Modifier> modifiers, List<Expression> bodyContent) {
+    public Method(String name, List<Variable> arguments, Type returnType, List<Modifier> modifiers, List<Expression> bodyContent, List<Statement> statements) {
         this.name = name;
         this.arguments = new ArrayList<>(arguments);
         this.returnType = returnType;
         this.modifiers = new ArrayList<>(modifiers);
         this.bodyContent = new ArrayList<>(bodyContent);
+        this.statements = new ArrayList<>(statements);
     }
 
     /**
@@ -70,5 +72,9 @@ public final class Method implements ASTNode {
 
     public List<Expression> getBodyContent() {
         return bodyContent;
+    }
+
+    public List<Statement> getStatements() {
+        return statements;
     }
 }

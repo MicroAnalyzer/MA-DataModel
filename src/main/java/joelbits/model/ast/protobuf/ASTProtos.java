@@ -5554,6 +5554,2296 @@ public final class ASTProtos {
 
   }
 
+  public interface StatementOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:joelbits.Statement)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.joelbits.Statement.StatementType type = 1;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>.joelbits.Statement.StatementType type = 1;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType getType();
+
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> 
+        getExpressionsList();
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Expression getExpressions(int index);
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    int getExpressionsCount();
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getExpressionsOrBuilderList();
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getExpressionsOrBuilder(
+        int index);
+
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    boolean hasCondition();
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Expression getCondition();
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getConditionOrBuilder();
+
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> 
+        getInitializationsList();
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Expression getInitializations(int index);
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    int getInitializationsCount();
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getInitializationsOrBuilderList();
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getInitializationsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> 
+        getStatementsList();
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index);
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    int getStatementsCount();
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+        getStatementsOrBuilderList();
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> 
+        getUpdatesList();
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Expression getUpdates(int index);
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    int getUpdatesCount();
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getUpdatesOrBuilderList();
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getUpdatesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code joelbits.Statement}
+   */
+  public  static final class Statement extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:joelbits.Statement)
+      StatementOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Statement.newBuilder() to construct.
+    private Statement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Statement() {
+      type_ = 0;
+      expressions_ = java.util.Collections.emptyList();
+      initializations_ = java.util.Collections.emptyList();
+      statements_ = java.util.Collections.emptyList();
+      updates_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Statement(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                expressions_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              expressions_.add(
+                  input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Expression.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              joelbits.model.ast.protobuf.ASTProtos.Expression.Builder subBuilder = null;
+              if (condition_ != null) {
+                subBuilder = condition_.toBuilder();
+              }
+              condition_ = input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Expression.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(condition_);
+                condition_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                initializations_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              initializations_.add(
+                  input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Expression.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                statements_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Statement>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              statements_.add(
+                  input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Statement.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                updates_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              updates_.add(
+                  input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Expression.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          expressions_ = java.util.Collections.unmodifiableList(expressions_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          initializations_ = java.util.Collections.unmodifiableList(initializations_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          statements_ = java.util.Collections.unmodifiableList(statements_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          updates_ = java.util.Collections.unmodifiableList(updates_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return joelbits.model.ast.protobuf.ASTProtos.internal_static_joelbits_Statement_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return joelbits.model.ast.protobuf.ASTProtos.internal_static_joelbits_Statement_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              joelbits.model.ast.protobuf.ASTProtos.Statement.class, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code joelbits.Statement.StatementType}
+     */
+    public enum StatementType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>FOR = 0;</code>
+       */
+      FOR(0),
+      /**
+       * <code>DO = 1;</code>
+       */
+      DO(1),
+      /**
+       * <code>IF = 2;</code>
+       */
+      IF(2),
+      /**
+       * <code>RETURN = 3;</code>
+       */
+      RETURN(3),
+      /**
+       * <code>WHILE = 4;</code>
+       */
+      WHILE(4),
+      /**
+       * <code>TRY = 5;</code>
+       */
+      TRY(5),
+      /**
+       * <code>OTHER = 6;</code>
+       */
+      OTHER(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>FOR = 0;</code>
+       */
+      public static final int FOR_VALUE = 0;
+      /**
+       * <code>DO = 1;</code>
+       */
+      public static final int DO_VALUE = 1;
+      /**
+       * <code>IF = 2;</code>
+       */
+      public static final int IF_VALUE = 2;
+      /**
+       * <code>RETURN = 3;</code>
+       */
+      public static final int RETURN_VALUE = 3;
+      /**
+       * <code>WHILE = 4;</code>
+       */
+      public static final int WHILE_VALUE = 4;
+      /**
+       * <code>TRY = 5;</code>
+       */
+      public static final int TRY_VALUE = 5;
+      /**
+       * <code>OTHER = 6;</code>
+       */
+      public static final int OTHER_VALUE = 6;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StatementType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StatementType forNumber(int value) {
+        switch (value) {
+          case 0: return FOR;
+          case 1: return DO;
+          case 2: return IF;
+          case 3: return RETURN;
+          case 4: return WHILE;
+          case 5: return TRY;
+          case 6: return OTHER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<StatementType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          StatementType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<StatementType>() {
+              public StatementType findValueByNumber(int number) {
+                return StatementType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return joelbits.model.ast.protobuf.ASTProtos.Statement.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final StatementType[] VALUES = values();
+
+      public static StatementType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private StatementType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:joelbits.Statement.StatementType)
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>.joelbits.Statement.StatementType type = 1;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.joelbits.Statement.StatementType type = 1;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType getType() {
+      joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType result = joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.valueOf(type_);
+      return result == null ? joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.UNRECOGNIZED : result;
+    }
+
+    public static final int EXPRESSIONS_FIELD_NUMBER = 2;
+    private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> expressions_;
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getExpressionsList() {
+      return expressions_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getExpressionsOrBuilderList() {
+      return expressions_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    public int getExpressionsCount() {
+      return expressions_.size();
+    }
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Expression getExpressions(int index) {
+      return expressions_.get(index);
+    }
+    /**
+     * <code>repeated .joelbits.Expression expressions = 2;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getExpressionsOrBuilder(
+        int index) {
+      return expressions_.get(index);
+    }
+
+    public static final int CONDITION_FIELD_NUMBER = 3;
+    private joelbits.model.ast.protobuf.ASTProtos.Expression condition_;
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    public boolean hasCondition() {
+      return condition_ != null;
+    }
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Expression getCondition() {
+      return condition_ == null ? joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance() : condition_;
+    }
+    /**
+     * <code>.joelbits.Expression condition = 3;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getConditionOrBuilder() {
+      return getCondition();
+    }
+
+    public static final int INITIALIZATIONS_FIELD_NUMBER = 4;
+    private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> initializations_;
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getInitializationsList() {
+      return initializations_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getInitializationsOrBuilderList() {
+      return initializations_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    public int getInitializationsCount() {
+      return initializations_.size();
+    }
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Expression getInitializations(int index) {
+      return initializations_.get(index);
+    }
+    /**
+     * <code>repeated .joelbits.Expression initializations = 4;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getInitializationsOrBuilder(
+        int index) {
+      return initializations_.get(index);
+    }
+
+    public static final int STATEMENTS_FIELD_NUMBER = 5;
+    private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> statements_;
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> getStatementsList() {
+      return statements_;
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+        getStatementsOrBuilderList() {
+      return statements_;
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    public int getStatementsCount() {
+      return statements_.size();
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index) {
+      return statements_.get(index);
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 5;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+        int index) {
+      return statements_.get(index);
+    }
+
+    public static final int UPDATES_FIELD_NUMBER = 6;
+    private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> updates_;
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getUpdatesList() {
+      return updates_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+        getUpdatesOrBuilderList() {
+      return updates_;
+    }
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    public int getUpdatesCount() {
+      return updates_.size();
+    }
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Expression getUpdates(int index) {
+      return updates_.get(index);
+    }
+    /**
+     * <code>repeated .joelbits.Expression updates = 6;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getUpdatesOrBuilder(
+        int index) {
+      return updates_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.FOR.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      for (int i = 0; i < expressions_.size(); i++) {
+        output.writeMessage(2, expressions_.get(i));
+      }
+      if (condition_ != null) {
+        output.writeMessage(3, getCondition());
+      }
+      for (int i = 0; i < initializations_.size(); i++) {
+        output.writeMessage(4, initializations_.get(i));
+      }
+      for (int i = 0; i < statements_.size(); i++) {
+        output.writeMessage(5, statements_.get(i));
+      }
+      for (int i = 0; i < updates_.size(); i++) {
+        output.writeMessage(6, updates_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.FOR.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      for (int i = 0; i < expressions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, expressions_.get(i));
+      }
+      if (condition_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getCondition());
+      }
+      for (int i = 0; i < initializations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, initializations_.get(i));
+      }
+      for (int i = 0; i < statements_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, statements_.get(i));
+      }
+      for (int i = 0; i < updates_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, updates_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof joelbits.model.ast.protobuf.ASTProtos.Statement)) {
+        return super.equals(obj);
+      }
+      joelbits.model.ast.protobuf.ASTProtos.Statement other = (joelbits.model.ast.protobuf.ASTProtos.Statement) obj;
+
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && getExpressionsList()
+          .equals(other.getExpressionsList());
+      result = result && (hasCondition() == other.hasCondition());
+      if (hasCondition()) {
+        result = result && getCondition()
+            .equals(other.getCondition());
+      }
+      result = result && getInitializationsList()
+          .equals(other.getInitializationsList());
+      result = result && getStatementsList()
+          .equals(other.getStatementsList());
+      result = result && getUpdatesList()
+          .equals(other.getUpdatesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      if (getExpressionsCount() > 0) {
+        hash = (37 * hash) + EXPRESSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getExpressionsList().hashCode();
+      }
+      if (hasCondition()) {
+        hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+        hash = (53 * hash) + getCondition().hashCode();
+      }
+      if (getInitializationsCount() > 0) {
+        hash = (37 * hash) + INITIALIZATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getInitializationsList().hashCode();
+      }
+      if (getStatementsCount() > 0) {
+        hash = (37 * hash) + STATEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatementsList().hashCode();
+      }
+      if (getUpdatesCount() > 0) {
+        hash = (37 * hash) + UPDATES_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdatesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(joelbits.model.ast.protobuf.ASTProtos.Statement prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code joelbits.Statement}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:joelbits.Statement)
+        joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return joelbits.model.ast.protobuf.ASTProtos.internal_static_joelbits_Statement_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return joelbits.model.ast.protobuf.ASTProtos.internal_static_joelbits_Statement_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                joelbits.model.ast.protobuf.ASTProtos.Statement.class, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder.class);
+      }
+
+      // Construct using joelbits.model.ast.protobuf.ASTProtos.Statement.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getExpressionsFieldBuilder();
+          getInitializationsFieldBuilder();
+          getStatementsFieldBuilder();
+          getUpdatesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        if (expressionsBuilder_ == null) {
+          expressions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          expressionsBuilder_.clear();
+        }
+        if (conditionBuilder_ == null) {
+          condition_ = null;
+        } else {
+          condition_ = null;
+          conditionBuilder_ = null;
+        }
+        if (initializationsBuilder_ == null) {
+          initializations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          initializationsBuilder_.clear();
+        }
+        if (statementsBuilder_ == null) {
+          statements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          statementsBuilder_.clear();
+        }
+        if (updatesBuilder_ == null) {
+          updates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          updatesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return joelbits.model.ast.protobuf.ASTProtos.internal_static_joelbits_Statement_descriptor;
+      }
+
+      public joelbits.model.ast.protobuf.ASTProtos.Statement getDefaultInstanceForType() {
+        return joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance();
+      }
+
+      public joelbits.model.ast.protobuf.ASTProtos.Statement build() {
+        joelbits.model.ast.protobuf.ASTProtos.Statement result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public joelbits.model.ast.protobuf.ASTProtos.Statement buildPartial() {
+        joelbits.model.ast.protobuf.ASTProtos.Statement result = new joelbits.model.ast.protobuf.ASTProtos.Statement(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.type_ = type_;
+        if (expressionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            expressions_ = java.util.Collections.unmodifiableList(expressions_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.expressions_ = expressions_;
+        } else {
+          result.expressions_ = expressionsBuilder_.build();
+        }
+        if (conditionBuilder_ == null) {
+          result.condition_ = condition_;
+        } else {
+          result.condition_ = conditionBuilder_.build();
+        }
+        if (initializationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            initializations_ = java.util.Collections.unmodifiableList(initializations_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.initializations_ = initializations_;
+        } else {
+          result.initializations_ = initializationsBuilder_.build();
+        }
+        if (statementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            statements_ = java.util.Collections.unmodifiableList(statements_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.statements_ = statements_;
+        } else {
+          result.statements_ = statementsBuilder_.build();
+        }
+        if (updatesBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            updates_ = java.util.Collections.unmodifiableList(updates_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.updates_ = updates_;
+        } else {
+          result.updates_ = updatesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof joelbits.model.ast.protobuf.ASTProtos.Statement) {
+          return mergeFrom((joelbits.model.ast.protobuf.ASTProtos.Statement)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(joelbits.model.ast.protobuf.ASTProtos.Statement other) {
+        if (other == joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (expressionsBuilder_ == null) {
+          if (!other.expressions_.isEmpty()) {
+            if (expressions_.isEmpty()) {
+              expressions_ = other.expressions_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureExpressionsIsMutable();
+              expressions_.addAll(other.expressions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.expressions_.isEmpty()) {
+            if (expressionsBuilder_.isEmpty()) {
+              expressionsBuilder_.dispose();
+              expressionsBuilder_ = null;
+              expressions_ = other.expressions_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              expressionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getExpressionsFieldBuilder() : null;
+            } else {
+              expressionsBuilder_.addAllMessages(other.expressions_);
+            }
+          }
+        }
+        if (other.hasCondition()) {
+          mergeCondition(other.getCondition());
+        }
+        if (initializationsBuilder_ == null) {
+          if (!other.initializations_.isEmpty()) {
+            if (initializations_.isEmpty()) {
+              initializations_ = other.initializations_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureInitializationsIsMutable();
+              initializations_.addAll(other.initializations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.initializations_.isEmpty()) {
+            if (initializationsBuilder_.isEmpty()) {
+              initializationsBuilder_.dispose();
+              initializationsBuilder_ = null;
+              initializations_ = other.initializations_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              initializationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getInitializationsFieldBuilder() : null;
+            } else {
+              initializationsBuilder_.addAllMessages(other.initializations_);
+            }
+          }
+        }
+        if (statementsBuilder_ == null) {
+          if (!other.statements_.isEmpty()) {
+            if (statements_.isEmpty()) {
+              statements_ = other.statements_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureStatementsIsMutable();
+              statements_.addAll(other.statements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.statements_.isEmpty()) {
+            if (statementsBuilder_.isEmpty()) {
+              statementsBuilder_.dispose();
+              statementsBuilder_ = null;
+              statements_ = other.statements_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              statementsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStatementsFieldBuilder() : null;
+            } else {
+              statementsBuilder_.addAllMessages(other.statements_);
+            }
+          }
+        }
+        if (updatesBuilder_ == null) {
+          if (!other.updates_.isEmpty()) {
+            if (updates_.isEmpty()) {
+              updates_ = other.updates_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureUpdatesIsMutable();
+              updates_.addAll(other.updates_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.updates_.isEmpty()) {
+            if (updatesBuilder_.isEmpty()) {
+              updatesBuilder_.dispose();
+              updatesBuilder_ = null;
+              updates_ = other.updates_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              updatesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUpdatesFieldBuilder() : null;
+            } else {
+              updatesBuilder_.addAllMessages(other.updates_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        joelbits.model.ast.protobuf.ASTProtos.Statement parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (joelbits.model.ast.protobuf.ASTProtos.Statement) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int type_ = 0;
+      /**
+       * <code>.joelbits.Statement.StatementType type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.joelbits.Statement.StatementType type = 1;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.joelbits.Statement.StatementType type = 1;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType getType() {
+        joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType result = joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.valueOf(type_);
+        return result == null ? joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.joelbits.Statement.StatementType type = 1;</code>
+       */
+      public Builder setType(joelbits.model.ast.protobuf.ASTProtos.Statement.StatementType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.joelbits.Statement.StatementType type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> expressions_ =
+        java.util.Collections.emptyList();
+      private void ensureExpressionsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          expressions_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>(expressions_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> expressionsBuilder_;
+
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getExpressionsList() {
+        if (expressionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(expressions_);
+        } else {
+          return expressionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public int getExpressionsCount() {
+        if (expressionsBuilder_ == null) {
+          return expressions_.size();
+        } else {
+          return expressionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression getExpressions(int index) {
+        if (expressionsBuilder_ == null) {
+          return expressions_.get(index);
+        } else {
+          return expressionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder setExpressions(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (expressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExpressionsIsMutable();
+          expressions_.set(index, value);
+          onChanged();
+        } else {
+          expressionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder setExpressions(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (expressionsBuilder_ == null) {
+          ensureExpressionsIsMutable();
+          expressions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          expressionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder addExpressions(joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (expressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExpressionsIsMutable();
+          expressions_.add(value);
+          onChanged();
+        } else {
+          expressionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder addExpressions(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (expressionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExpressionsIsMutable();
+          expressions_.add(index, value);
+          onChanged();
+        } else {
+          expressionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder addExpressions(
+          joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (expressionsBuilder_ == null) {
+          ensureExpressionsIsMutable();
+          expressions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          expressionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder addExpressions(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (expressionsBuilder_ == null) {
+          ensureExpressionsIsMutable();
+          expressions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          expressionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder addAllExpressions(
+          java.lang.Iterable<? extends joelbits.model.ast.protobuf.ASTProtos.Expression> values) {
+        if (expressionsBuilder_ == null) {
+          ensureExpressionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, expressions_);
+          onChanged();
+        } else {
+          expressionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder clearExpressions() {
+        if (expressionsBuilder_ == null) {
+          expressions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          expressionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public Builder removeExpressions(int index) {
+        if (expressionsBuilder_ == null) {
+          ensureExpressionsIsMutable();
+          expressions_.remove(index);
+          onChanged();
+        } else {
+          expressionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder getExpressionsBuilder(
+          int index) {
+        return getExpressionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getExpressionsOrBuilder(
+          int index) {
+        if (expressionsBuilder_ == null) {
+          return expressions_.get(index);  } else {
+          return expressionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+           getExpressionsOrBuilderList() {
+        if (expressionsBuilder_ != null) {
+          return expressionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(expressions_);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addExpressionsBuilder() {
+        return getExpressionsFieldBuilder().addBuilder(
+            joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addExpressionsBuilder(
+          int index) {
+        return getExpressionsFieldBuilder().addBuilder(
+            index, joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression expressions = 2;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression.Builder> 
+           getExpressionsBuilderList() {
+        return getExpressionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+          getExpressionsFieldBuilder() {
+        if (expressionsBuilder_ == null) {
+          expressionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder>(
+                  expressions_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          expressions_ = null;
+        }
+        return expressionsBuilder_;
+      }
+
+      private joelbits.model.ast.protobuf.ASTProtos.Expression condition_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> conditionBuilder_;
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public boolean hasCondition() {
+        return conditionBuilder_ != null || condition_ != null;
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression getCondition() {
+        if (conditionBuilder_ == null) {
+          return condition_ == null ? joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance() : condition_;
+        } else {
+          return conditionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public Builder setCondition(joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (conditionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          conditionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public Builder setCondition(
+          joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (conditionBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public Builder mergeCondition(joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (conditionBuilder_ == null) {
+          if (condition_ != null) {
+            condition_ =
+              joelbits.model.ast.protobuf.ASTProtos.Expression.newBuilder(condition_).mergeFrom(value).buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          conditionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public Builder clearCondition() {
+        if (conditionBuilder_ == null) {
+          condition_ = null;
+          onChanged();
+        } else {
+          condition_ = null;
+          conditionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder getConditionBuilder() {
+        
+        onChanged();
+        return getConditionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getConditionOrBuilder() {
+        if (conditionBuilder_ != null) {
+          return conditionBuilder_.getMessageOrBuilder();
+        } else {
+          return condition_ == null ?
+              joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance() : condition_;
+        }
+      }
+      /**
+       * <code>.joelbits.Expression condition = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+          getConditionFieldBuilder() {
+        if (conditionBuilder_ == null) {
+          conditionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder>(
+                  getCondition(),
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        return conditionBuilder_;
+      }
+
+      private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> initializations_ =
+        java.util.Collections.emptyList();
+      private void ensureInitializationsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          initializations_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>(initializations_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> initializationsBuilder_;
+
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getInitializationsList() {
+        if (initializationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(initializations_);
+        } else {
+          return initializationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public int getInitializationsCount() {
+        if (initializationsBuilder_ == null) {
+          return initializations_.size();
+        } else {
+          return initializationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression getInitializations(int index) {
+        if (initializationsBuilder_ == null) {
+          return initializations_.get(index);
+        } else {
+          return initializationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder setInitializations(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (initializationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInitializationsIsMutable();
+          initializations_.set(index, value);
+          onChanged();
+        } else {
+          initializationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder setInitializations(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (initializationsBuilder_ == null) {
+          ensureInitializationsIsMutable();
+          initializations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          initializationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder addInitializations(joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (initializationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInitializationsIsMutable();
+          initializations_.add(value);
+          onChanged();
+        } else {
+          initializationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder addInitializations(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (initializationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInitializationsIsMutable();
+          initializations_.add(index, value);
+          onChanged();
+        } else {
+          initializationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder addInitializations(
+          joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (initializationsBuilder_ == null) {
+          ensureInitializationsIsMutable();
+          initializations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          initializationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder addInitializations(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (initializationsBuilder_ == null) {
+          ensureInitializationsIsMutable();
+          initializations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          initializationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder addAllInitializations(
+          java.lang.Iterable<? extends joelbits.model.ast.protobuf.ASTProtos.Expression> values) {
+        if (initializationsBuilder_ == null) {
+          ensureInitializationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, initializations_);
+          onChanged();
+        } else {
+          initializationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder clearInitializations() {
+        if (initializationsBuilder_ == null) {
+          initializations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          initializationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public Builder removeInitializations(int index) {
+        if (initializationsBuilder_ == null) {
+          ensureInitializationsIsMutable();
+          initializations_.remove(index);
+          onChanged();
+        } else {
+          initializationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder getInitializationsBuilder(
+          int index) {
+        return getInitializationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getInitializationsOrBuilder(
+          int index) {
+        if (initializationsBuilder_ == null) {
+          return initializations_.get(index);  } else {
+          return initializationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+           getInitializationsOrBuilderList() {
+        if (initializationsBuilder_ != null) {
+          return initializationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(initializations_);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addInitializationsBuilder() {
+        return getInitializationsFieldBuilder().addBuilder(
+            joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addInitializationsBuilder(
+          int index) {
+        return getInitializationsFieldBuilder().addBuilder(
+            index, joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression initializations = 4;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression.Builder> 
+           getInitializationsBuilderList() {
+        return getInitializationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+          getInitializationsFieldBuilder() {
+        if (initializationsBuilder_ == null) {
+          initializationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder>(
+                  initializations_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          initializations_ = null;
+        }
+        return initializationsBuilder_;
+      }
+
+      private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> statements_ =
+        java.util.Collections.emptyList();
+      private void ensureStatementsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          statements_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Statement>(statements_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> statementsBuilder_;
+
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> getStatementsList() {
+        if (statementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(statements_);
+        } else {
+          return statementsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public int getStatementsCount() {
+        if (statementsBuilder_ == null) {
+          return statements_.size();
+        } else {
+          return statementsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index) {
+        if (statementsBuilder_ == null) {
+          return statements_.get(index);
+        } else {
+          return statementsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder setStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.set(index, value);
+          onChanged();
+        } else {
+          statementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder setStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder addStatements(joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.add(value);
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder addStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.add(index, value);
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder addStatements(
+          joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder addStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder addAllStatements(
+          java.lang.Iterable<? extends joelbits.model.ast.protobuf.ASTProtos.Statement> values) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, statements_);
+          onChanged();
+        } else {
+          statementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder clearStatements() {
+        if (statementsBuilder_ == null) {
+          statements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          statementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public Builder removeStatements(int index) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.remove(index);
+          onChanged();
+        } else {
+          statementsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder getStatementsBuilder(
+          int index) {
+        return getStatementsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+          int index) {
+        if (statementsBuilder_ == null) {
+          return statements_.get(index);  } else {
+          return statementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+           getStatementsOrBuilderList() {
+        if (statementsBuilder_ != null) {
+          return statementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(statements_);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder addStatementsBuilder() {
+        return getStatementsFieldBuilder().addBuilder(
+            joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder addStatementsBuilder(
+          int index) {
+        return getStatementsFieldBuilder().addBuilder(
+            index, joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 5;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement.Builder> 
+           getStatementsBuilderList() {
+        return getStatementsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+          getStatementsFieldBuilder() {
+        if (statementsBuilder_ == null) {
+          statementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder>(
+                  statements_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          statements_ = null;
+        }
+        return statementsBuilder_;
+      }
+
+      private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> updates_ =
+        java.util.Collections.emptyList();
+      private void ensureUpdatesIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          updates_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Expression>(updates_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> updatesBuilder_;
+
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression> getUpdatesList() {
+        if (updatesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(updates_);
+        } else {
+          return updatesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public int getUpdatesCount() {
+        if (updatesBuilder_ == null) {
+          return updates_.size();
+        } else {
+          return updatesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression getUpdates(int index) {
+        if (updatesBuilder_ == null) {
+          return updates_.get(index);
+        } else {
+          return updatesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder setUpdates(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.set(index, value);
+          onChanged();
+        } else {
+          updatesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder setUpdates(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder addUpdates(joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.add(value);
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder addUpdates(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.add(index, value);
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder addUpdates(
+          joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.add(builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder addUpdates(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder addAllUpdates(
+          java.lang.Iterable<? extends joelbits.model.ast.protobuf.ASTProtos.Expression> values) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, updates_);
+          onChanged();
+        } else {
+          updatesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder clearUpdates() {
+        if (updatesBuilder_ == null) {
+          updates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          updatesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public Builder removeUpdates(int index) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.remove(index);
+          onChanged();
+        } else {
+          updatesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder getUpdatesBuilder(
+          int index) {
+        return getUpdatesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getUpdatesOrBuilder(
+          int index) {
+        if (updatesBuilder_ == null) {
+          return updates_.get(index);  } else {
+          return updatesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+           getUpdatesOrBuilderList() {
+        if (updatesBuilder_ != null) {
+          return updatesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(updates_);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addUpdatesBuilder() {
+        return getUpdatesFieldBuilder().addBuilder(
+            joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Expression.Builder addUpdatesBuilder(
+          int index) {
+        return getUpdatesFieldBuilder().addBuilder(
+            index, joelbits.model.ast.protobuf.ASTProtos.Expression.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Expression updates = 6;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Expression.Builder> 
+           getUpdatesBuilderList() {
+        return getUpdatesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder> 
+          getUpdatesFieldBuilder() {
+        if (updatesBuilder_ == null) {
+          updatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Expression, joelbits.model.ast.protobuf.ASTProtos.Expression.Builder, joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder>(
+                  updates_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          updates_ = null;
+        }
+        return updatesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:joelbits.Statement)
+    }
+
+    // @@protoc_insertion_point(class_scope:joelbits.Statement)
+    private static final joelbits.model.ast.protobuf.ASTProtos.Statement DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new joelbits.model.ast.protobuf.ASTProtos.Statement();
+    }
+
+    public static joelbits.model.ast.protobuf.ASTProtos.Statement getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Statement>
+        PARSER = new com.google.protobuf.AbstractParser<Statement>() {
+      public Statement parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Statement(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Statement> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Statement> getParserForType() {
+      return PARSER;
+    }
+
+    public joelbits.model.ast.protobuf.ASTProtos.Statement getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MethodOrBuilder extends
       // @@protoc_insertion_point(interface_extends:joelbits.Method)
       com.google.protobuf.MessageOrBuilder {
@@ -5676,6 +7966,30 @@ public final class ASTProtos {
      */
     joelbits.model.ast.protobuf.ASTProtos.ExpressionOrBuilder getBodyContentOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> 
+        getStatementsList();
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index);
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    int getStatementsCount();
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+        getStatementsOrBuilderList();
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code joelbits.Method}
@@ -5695,6 +8009,7 @@ public final class ASTProtos {
       modifiers_ = java.util.Collections.emptyList();
       exceptionTypes_ = java.util.Collections.emptyList();
       bodyContent_ = java.util.Collections.emptyList();
+      statements_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5783,6 +8098,15 @@ public final class ASTProtos {
                   input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Expression.parser(), extensionRegistry));
               break;
             }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                statements_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Statement>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              statements_.add(
+                  input.readMessage(joelbits.model.ast.protobuf.ASTProtos.Statement.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5802,6 +8126,9 @@ public final class ASTProtos {
         }
         if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           bodyContent_ = java.util.Collections.unmodifiableList(bodyContent_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          statements_ = java.util.Collections.unmodifiableList(statements_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6015,6 +8342,41 @@ public final class ASTProtos {
       return bodyContent_.get(index);
     }
 
+    public static final int STATEMENTS_FIELD_NUMBER = 7;
+    private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> statements_;
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> getStatementsList() {
+      return statements_;
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+        getStatementsOrBuilderList() {
+      return statements_;
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    public int getStatementsCount() {
+      return statements_.size();
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index) {
+      return statements_.get(index);
+    }
+    /**
+     * <code>repeated .joelbits.Statement statements = 7;</code>
+     */
+    public joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+        int index) {
+      return statements_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6044,6 +8406,9 @@ public final class ASTProtos {
       }
       for (int i = 0; i < bodyContent_.size(); i++) {
         output.writeMessage(6, bodyContent_.get(i));
+      }
+      for (int i = 0; i < statements_.size(); i++) {
+        output.writeMessage(7, statements_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -6076,6 +8441,10 @@ public final class ASTProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, bodyContent_.get(i));
       }
+      for (int i = 0; i < statements_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, statements_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6107,6 +8476,8 @@ public final class ASTProtos {
           .equals(other.getExceptionTypesList());
       result = result && getBodyContentList()
           .equals(other.getBodyContentList());
+      result = result && getStatementsList()
+          .equals(other.getStatementsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -6139,6 +8510,10 @@ public final class ASTProtos {
       if (getBodyContentCount() > 0) {
         hash = (37 * hash) + BODY_CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getBodyContentList().hashCode();
+      }
+      if (getStatementsCount() > 0) {
+        hash = (37 * hash) + STATEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatementsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6269,6 +8644,7 @@ public final class ASTProtos {
           getModifiersFieldBuilder();
           getExceptionTypesFieldBuilder();
           getBodyContentFieldBuilder();
+          getStatementsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -6304,6 +8680,12 @@ public final class ASTProtos {
           bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           bodyContentBuilder_.clear();
+        }
+        if (statementsBuilder_ == null) {
+          statements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          statementsBuilder_.clear();
         }
         return this;
       }
@@ -6370,6 +8752,15 @@ public final class ASTProtos {
           result.bodyContent_ = bodyContent_;
         } else {
           result.bodyContent_ = bodyContentBuilder_.build();
+        }
+        if (statementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            statements_ = java.util.Collections.unmodifiableList(statements_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.statements_ = statements_;
+        } else {
+          result.statements_ = statementsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -6521,6 +8912,32 @@ public final class ASTProtos {
                    getBodyContentFieldBuilder() : null;
             } else {
               bodyContentBuilder_.addAllMessages(other.bodyContent_);
+            }
+          }
+        }
+        if (statementsBuilder_ == null) {
+          if (!other.statements_.isEmpty()) {
+            if (statements_.isEmpty()) {
+              statements_ = other.statements_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureStatementsIsMutable();
+              statements_.addAll(other.statements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.statements_.isEmpty()) {
+            if (statementsBuilder_.isEmpty()) {
+              statementsBuilder_.dispose();
+              statementsBuilder_ = null;
+              statements_ = other.statements_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              statementsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStatementsFieldBuilder() : null;
+            } else {
+              statementsBuilder_.addAllMessages(other.statements_);
             }
           }
         }
@@ -7696,6 +10113,246 @@ public final class ASTProtos {
           bodyContent_ = null;
         }
         return bodyContentBuilder_;
+      }
+
+      private java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> statements_ =
+        java.util.Collections.emptyList();
+      private void ensureStatementsIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          statements_ = new java.util.ArrayList<joelbits.model.ast.protobuf.ASTProtos.Statement>(statements_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> statementsBuilder_;
+
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement> getStatementsList() {
+        if (statementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(statements_);
+        } else {
+          return statementsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public int getStatementsCount() {
+        if (statementsBuilder_ == null) {
+          return statements_.size();
+        } else {
+          return statementsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement getStatements(int index) {
+        if (statementsBuilder_ == null) {
+          return statements_.get(index);
+        } else {
+          return statementsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder setStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.set(index, value);
+          onChanged();
+        } else {
+          statementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder setStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder addStatements(joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.add(value);
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder addStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement value) {
+        if (statementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStatementsIsMutable();
+          statements_.add(index, value);
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder addStatements(
+          joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder addStatements(
+          int index, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder builderForValue) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          statementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder addAllStatements(
+          java.lang.Iterable<? extends joelbits.model.ast.protobuf.ASTProtos.Statement> values) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, statements_);
+          onChanged();
+        } else {
+          statementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder clearStatements() {
+        if (statementsBuilder_ == null) {
+          statements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          statementsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public Builder removeStatements(int index) {
+        if (statementsBuilder_ == null) {
+          ensureStatementsIsMutable();
+          statements_.remove(index);
+          onChanged();
+        } else {
+          statementsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder getStatementsBuilder(
+          int index) {
+        return getStatementsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder getStatementsOrBuilder(
+          int index) {
+        if (statementsBuilder_ == null) {
+          return statements_.get(index);  } else {
+          return statementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public java.util.List<? extends joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+           getStatementsOrBuilderList() {
+        if (statementsBuilder_ != null) {
+          return statementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(statements_);
+        }
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder addStatementsBuilder() {
+        return getStatementsFieldBuilder().addBuilder(
+            joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public joelbits.model.ast.protobuf.ASTProtos.Statement.Builder addStatementsBuilder(
+          int index) {
+        return getStatementsFieldBuilder().addBuilder(
+            index, joelbits.model.ast.protobuf.ASTProtos.Statement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .joelbits.Statement statements = 7;</code>
+       */
+      public java.util.List<joelbits.model.ast.protobuf.ASTProtos.Statement.Builder> 
+           getStatementsBuilderList() {
+        return getStatementsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder> 
+          getStatementsFieldBuilder() {
+        if (statementsBuilder_ == null) {
+          statementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              joelbits.model.ast.protobuf.ASTProtos.Statement, joelbits.model.ast.protobuf.ASTProtos.Statement.Builder, joelbits.model.ast.protobuf.ASTProtos.StatementOrBuilder>(
+                  statements_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          statements_ = null;
+        }
+        return statementsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12227,6 +14884,11 @@ public final class ASTProtos {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_joelbits_Expression_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_joelbits_Statement_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_joelbits_Statement_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_joelbits_Method_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12279,13 +14941,23 @@ public final class ASTProtos {
       "AL\020\000\022\007\n\003NEW\020\001\022\n\n\006ASSIGN\020\002\022\t\n\005OTHER\020\003\022\017\n\013" +
       "TYPECOMPARE\020\004\022\030\n\024VARIABLE_DECLARATION\020\005\022" +
       "\016\n\nMETHODCALL\020\006\022\010\n\004CAST\020\007\022\017\n\013CONDITIONAL" +
-      "\020\010\022\020\n\014RETURN_VALUE\020\t\"\336\001\n\006Method\022\014\n\004name\030" +
-      "\001 \001(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits.Vari" +
-      "able\022#\n\013return_type\030\003 \001(\0132\016.joelbits.Typ" +
-      "e\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier" +
-      "\022\'\n\017exception_types\030\005 \003(\0132\016.joelbits.Typ" +
-      "e\022*\n\014body_content\030\006 \003(\0132\024.joelbits.Expre" +
-      "ssion\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type" +
+      "\020\010\022\020\n\014RETURN_VALUE\020\t\"\344\002\n\tStatement\022/\n\004ty" +
+      "pe\030\001 \001(\0162!.joelbits.Statement.StatementT" +
+      "ype\022)\n\013expressions\030\002 \003(\0132\024.joelbits.Expr" +
+      "ession\022\'\n\tcondition\030\003 \001(\0132\024.joelbits.Exp" +
+      "ression\022-\n\017initializations\030\004 \003(\0132\024.joelb" +
+      "its.Expression\022\'\n\nstatements\030\005 \003(\0132\023.joe" +
+      "lbits.Statement\022%\n\007updates\030\006 \003(\0132\024.joelb" +
+      "its.Expression\"S\n\rStatementType\022\007\n\003FOR\020\000" +
+      "\022\006\n\002DO\020\001\022\006\n\002IF\020\002\022\n\n\006RETURN\020\003\022\t\n\005WHILE\020\004\022" +
+      "\007\n\003TRY\020\005\022\t\n\005OTHER\020\006\"\207\002\n\006Method\022\014\n\004name\030\001" +
+      " \001(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits.Varia" +
+      "ble\022#\n\013return_type\030\003 \001(\0132\016.joelbits.Type" +
+      "\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier\022" +
+      "\'\n\017exception_types\030\005 \003(\0132\016.joelbits.Type" +
+      "\022*\n\014body_content\030\006 \003(\0132\024.joelbits.Expres" +
+      "sion\022\'\n\nstatements\030\007 \003(\0132\023.joelbits.Stat" +
+      "ement\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type" +
       "\030\002 \001(\0162\037.joelbits.Modifier.ModifierType\022" +
       "\032\n\022members_and_values\030\003 \003(\t\0225\n\nvisibilit" +
       "y\030\004 \001(\0162!.joelbits.Modifier.VisibilityTy" +
@@ -12337,32 +15009,38 @@ public final class ASTProtos {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Expression_descriptor,
         new java.lang.String[] { "Type", "Literal", "Method", "Variable", "MethodArguments", "VariableDeclarations", "Annotation", });
-    internal_static_joelbits_Method_descriptor =
+    internal_static_joelbits_Statement_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_joelbits_Statement_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_joelbits_Statement_descriptor,
+        new java.lang.String[] { "Type", "Expressions", "Condition", "Initializations", "Statements", "Updates", });
+    internal_static_joelbits_Method_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_joelbits_Method_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Method_descriptor,
-        new java.lang.String[] { "Name", "Arguments", "ReturnType", "Modifiers", "ExceptionTypes", "BodyContent", });
+        new java.lang.String[] { "Name", "Arguments", "ReturnType", "Modifiers", "ExceptionTypes", "BodyContent", "Statements", });
     internal_static_joelbits_Modifier_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_joelbits_Modifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Modifier_descriptor,
         new java.lang.String[] { "Name", "Type", "MembersAndValues", "Visibility", "Other", });
     internal_static_joelbits_Namespace_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_joelbits_Namespace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Namespace_descriptor,
         new java.lang.String[] { "Name", "Declarations", "Modifiers", });
     internal_static_joelbits_Variable_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_joelbits_Variable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Variable_descriptor,
         new java.lang.String[] { "Name", "Type", "Initializer", "Modifiers", });
     internal_static_joelbits_Type_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_joelbits_Type_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Type_descriptor,

@@ -41,6 +41,24 @@ message Expression {
     }
 }
 
+message Statement {
+    StatementType type = 1;
+    repeated Expression expressions = 2;
+    Expression condition = 3;
+    repeated Expression initializations = 4;
+    repeated Statement statements = 5;
+    repeated Expression updates = 6;
+    enum StatementType {
+        FOR = 0;
+        DO = 1;
+        IF = 2;
+        RETURN = 3;
+        WHILE = 4;
+        TRY = 5;
+        OTHER = 6;
+    }
+}
+
 message Method {
     string name = 1;
     repeated Variable arguments = 2;
@@ -48,6 +66,7 @@ message Method {
     repeated Modifier modifiers = 4;
     repeated Type exception_types = 5;
     repeated Expression body_content = 6;
+    repeated Statement statements = 7;
 }
 
 message Modifier {
