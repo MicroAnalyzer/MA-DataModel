@@ -28,6 +28,7 @@ message Expression {
     repeated Variable variable_declarations = 6;
     Modifier annotation = 7;
     bool is_postfix = 8;
+    Type new_type = 9;
     enum ExpressionType {
         LITERAL = 0;
         NEW = 1;
