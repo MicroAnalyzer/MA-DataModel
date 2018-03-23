@@ -63,7 +63,12 @@ public class ASTConverter {
             variableDeclarations.add(convertField(var));
         }
 
-        return new Expression(type, literal, method, variable, methodArguments, variableDeclarations, isPostfix, newType);
+        List<Expression> expressions = new ArrayList<>();
+        for (ASTProtos.Expression exp : expression.getExpressionsList()) {
+            expressions.add(convertExpression(exp));
+        }
+
+        return new Expression(type, literal, method, variable, methodArguments, variableDeclarations, isPostfix, newType, expressions);
     }
 
     private static Declaration convertDeclaration(ASTProtos.Declaration declaration) {
@@ -115,7 +120,12 @@ public class ASTConverter {
         DeclarationType newTypeType = DeclarationType.valueOf(expression.getNewType().getType().name());
         Type newType = new Type(expression.getNewType().getName(), newTypeType);
 
-        return new Expression(type, expression.getLiteral(), expression.getMethod(), expression.getVariable(), new ArrayList<>(), new ArrayList<>(), expression.getIsPostfix(),newType);
+        List<Expression> expressions = new ArrayList<>();
+        for (ASTProtos.Expression exp : expression.getExpressionsList()) {
+            expressions.add(convertExpression(exp));
+        }
+
+        return new Expression(type, expression.getLiteral(), expression.getMethod(), expression.getVariable(), new ArrayList<>(), new ArrayList<>(), expression.getIsPostfix(),newType, expressions);
     }
 
     private static Method convertMethod(ASTProtos.Method method) {

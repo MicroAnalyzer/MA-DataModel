@@ -29,6 +29,7 @@ message Expression {
     Modifier annotation = 7;
     bool is_postfix = 8;
     Type new_type = 9;
+    repeated Expression expressions = 10;
     enum ExpressionType {
         LITERAL = 0;
         NEW = 1;

@@ -19,8 +19,9 @@ public final class Expression implements ASTNode {
     private final List<Variable> variableDeclarations;
     private final boolean isPostfix;                        // true if this is a value expression, false if a target expression (e.g., target = value)
     private final Type newType;                             // represent newly created types, such as objects
+    private final List<Expression> expressions;             // represent several related expressions, e.g., an assignment consisting of both target and value expressions
 
-    public Expression(ExpressionType type, String literal, String method, String variable, List<Expression> methodArguments, List<Variable> variableDeclarations, boolean isPostfix, Type newType) {
+    public Expression(ExpressionType type, String literal, String method, String variable, List<Expression> methodArguments, List<Variable> variableDeclarations, boolean isPostfix, Type newType, List<Expression> expressions) {
         this.type = type;
         this.literal = literal;
         this.method = method;
@@ -29,6 +30,7 @@ public final class Expression implements ASTNode {
         this.variableDeclarations = new ArrayList<>(variableDeclarations);
         this.isPostfix = isPostfix;
         this.newType = newType;
+        this.expressions = expressions;
     }
 
     /**
@@ -89,5 +91,9 @@ public final class Expression implements ASTNode {
 
     public Type getNewType() {
         return newType;
+    }
+
+    public List<Expression> getExpressions() {
+        return expressions;
     }
 }
