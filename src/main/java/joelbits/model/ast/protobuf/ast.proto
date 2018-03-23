@@ -27,6 +27,7 @@ message Expression {
     repeated Expression method_arguments = 5;
     repeated Variable variable_declarations = 6;
     Modifier annotation = 7;
+    bool is_postfix = 8;
     enum ExpressionType {
         LITERAL = 0;
         NEW = 1;
@@ -38,6 +39,7 @@ message Expression {
         CAST = 7;
         CONDITIONAL = 8;
         RETURN_VALUE = 9;
+        FIELD_ACCESS = 10;
     }
 }
 

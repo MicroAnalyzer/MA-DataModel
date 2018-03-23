@@ -12,19 +12,21 @@ import java.util.List;
  */
 public final class Expression implements ASTNode {
     private final ExpressionType type;
-    private final String literal;               // Syntactic representations of boolean, character, numeric, or string data.
+    private final String literal;                           // Syntactic representations of boolean, character, numeric, or string data.
     private final String method;
     private final String variable;
     private final List<Expression> methodArguments;
     private final List<Variable> variableDeclarations;
+    private final boolean isPostfix;                        // true if this is a value expression, false if a target expression (e.g., target = value)
 
-    public Expression(ExpressionType type, String literal, String method, String variable, List<Expression> methodArguments, List<Variable> variableDeclarations) {
+    public Expression(ExpressionType type, String literal, String method, String variable, List<Expression> methodArguments, List<Variable> variableDeclarations, boolean isPostfix) {
         this.type = type;
         this.literal = literal;
         this.method = method;
         this.variable = variable;
         this.methodArguments = new ArrayList<>(methodArguments);
         this.variableDeclarations = new ArrayList<>(variableDeclarations);
+        this.isPostfix = isPostfix;
     }
 
     /**
@@ -77,5 +79,9 @@ public final class Expression implements ASTNode {
 
     public List<Variable> getVariableDeclarations() {
         return variableDeclarations;
+    }
+
+    public boolean isPostfix() {
+        return isPostfix;
     }
 }

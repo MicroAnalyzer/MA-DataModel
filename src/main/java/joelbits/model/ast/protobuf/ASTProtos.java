@@ -3663,6 +3663,11 @@ public final class ASTProtos {
      * <code>.joelbits.Modifier annotation = 7;</code>
      */
     joelbits.model.ast.protobuf.ASTProtos.ModifierOrBuilder getAnnotationOrBuilder();
+
+    /**
+     * <code>bool is_postfix = 8;</code>
+     */
+    boolean getIsPostfix();
   }
   /**
    * Protobuf type {@code joelbits.Expression}
@@ -3683,6 +3688,7 @@ public final class ASTProtos {
       variable_ = "";
       methodArguments_ = java.util.Collections.emptyList();
       variableDeclarations_ = java.util.Collections.emptyList();
+      isPostfix_ = false;
     }
 
     @java.lang.Override
@@ -3771,6 +3777,11 @@ public final class ASTProtos {
 
               break;
             }
+            case 64: {
+
+              isPostfix_ = input.readBool();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3846,6 +3857,10 @@ public final class ASTProtos {
        * <code>RETURN_VALUE = 9;</code>
        */
       RETURN_VALUE(9),
+      /**
+       * <code>FIELD_ACCESS = 10;</code>
+       */
+      FIELD_ACCESS(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -3889,6 +3904,10 @@ public final class ASTProtos {
        * <code>RETURN_VALUE = 9;</code>
        */
       public static final int RETURN_VALUE_VALUE = 9;
+      /**
+       * <code>FIELD_ACCESS = 10;</code>
+       */
+      public static final int FIELD_ACCESS_VALUE = 10;
 
 
       public final int getNumber() {
@@ -3919,6 +3938,7 @@ public final class ASTProtos {
           case 7: return CAST;
           case 8: return CONDITIONAL;
           case 9: return RETURN_VALUE;
+          case 10: return FIELD_ACCESS;
           default: return null;
         }
       }
@@ -4181,6 +4201,15 @@ public final class ASTProtos {
       return getAnnotation();
     }
 
+    public static final int IS_POSTFIX_FIELD_NUMBER = 8;
+    private boolean isPostfix_;
+    /**
+     * <code>bool is_postfix = 8;</code>
+     */
+    public boolean getIsPostfix() {
+      return isPostfix_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4213,6 +4242,9 @@ public final class ASTProtos {
       }
       if (annotation_ != null) {
         output.writeMessage(7, getAnnotation());
+      }
+      if (isPostfix_ != false) {
+        output.writeBool(8, isPostfix_);
       }
       unknownFields.writeTo(output);
     }
@@ -4247,6 +4279,10 @@ public final class ASTProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getAnnotation());
       }
+      if (isPostfix_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isPostfix_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4279,6 +4315,8 @@ public final class ASTProtos {
         result = result && getAnnotation()
             .equals(other.getAnnotation());
       }
+      result = result && (getIsPostfix()
+          == other.getIsPostfix());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4310,6 +4348,9 @@ public final class ASTProtos {
         hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotation().hashCode();
       }
+      hash = (37 * hash) + IS_POSTFIX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPostfix());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4467,6 +4508,8 @@ public final class ASTProtos {
           annotation_ = null;
           annotationBuilder_ = null;
         }
+        isPostfix_ = false;
+
         return this;
       }
 
@@ -4518,6 +4561,7 @@ public final class ASTProtos {
         } else {
           result.annotation_ = annotationBuilder_.build();
         }
+        result.isPostfix_ = isPostfix_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4629,6 +4673,9 @@ public final class ASTProtos {
         }
         if (other.hasAnnotation()) {
           mergeAnnotation(other.getAnnotation());
+        }
+        if (other.getIsPostfix() != false) {
+          setIsPostfix(other.getIsPostfix());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5504,6 +5551,32 @@ public final class ASTProtos {
           annotation_ = null;
         }
         return annotationBuilder_;
+      }
+
+      private boolean isPostfix_ ;
+      /**
+       * <code>bool is_postfix = 8;</code>
+       */
+      public boolean getIsPostfix() {
+        return isPostfix_;
+      }
+      /**
+       * <code>bool is_postfix = 8;</code>
+       */
+      public Builder setIsPostfix(boolean value) {
+        
+        isPostfix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_postfix = 8;</code>
+       */
+      public Builder clearIsPostfix() {
+        
+        isPostfix_ = false;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -14930,54 +15003,55 @@ public final class ASTProtos {
       "s.Declaration\022%\n\tmodifiers\030\004 \003(\0132\022.joelb" +
       "its.Modifier\022\"\n\006fields\030\005 \003(\0132\022.joelbits." +
       "Variable\022!\n\007methods\030\006 \003(\0132\020.joelbits.Met" +
-      "hod\022\037\n\007parents\030\007 \003(\0132\016.joelbits.Type\"\245\003\n" +
+      "hod\022\037\n\007parents\030\007 \003(\0132\016.joelbits.Type\"\313\003\n" +
       "\nExpression\0221\n\004type\030\001 \001(\0162#.joelbits.Exp" +
       "ression.ExpressionType\022\017\n\007literal\030\002 \001(\t\022" +
       "\016\n\006method\030\003 \001(\t\022\020\n\010variable\030\004 \001(\t\022.\n\020met" +
       "hod_arguments\030\005 \003(\0132\024.joelbits.Expressio" +
       "n\0221\n\025variable_declarations\030\006 \003(\0132\022.joelb" +
       "its.Variable\022&\n\nannotation\030\007 \001(\0132\022.joelb" +
-      "its.Modifier\"\245\001\n\016ExpressionType\022\013\n\007LITER" +
-      "AL\020\000\022\007\n\003NEW\020\001\022\n\n\006ASSIGN\020\002\022\t\n\005OTHER\020\003\022\017\n\013" +
-      "TYPECOMPARE\020\004\022\030\n\024VARIABLE_DECLARATION\020\005\022" +
-      "\016\n\nMETHODCALL\020\006\022\010\n\004CAST\020\007\022\017\n\013CONDITIONAL" +
-      "\020\010\022\020\n\014RETURN_VALUE\020\t\"\344\002\n\tStatement\022/\n\004ty" +
-      "pe\030\001 \001(\0162!.joelbits.Statement.StatementT" +
-      "ype\022)\n\013expressions\030\002 \003(\0132\024.joelbits.Expr" +
-      "ession\022\'\n\tcondition\030\003 \001(\0132\024.joelbits.Exp" +
-      "ression\022-\n\017initializations\030\004 \003(\0132\024.joelb" +
-      "its.Expression\022\'\n\nstatements\030\005 \003(\0132\023.joe" +
-      "lbits.Statement\022%\n\007updates\030\006 \003(\0132\024.joelb" +
-      "its.Expression\"S\n\rStatementType\022\007\n\003FOR\020\000" +
-      "\022\006\n\002DO\020\001\022\006\n\002IF\020\002\022\n\n\006RETURN\020\003\022\t\n\005WHILE\020\004\022" +
-      "\007\n\003TRY\020\005\022\t\n\005OTHER\020\006\"\207\002\n\006Method\022\014\n\004name\030\001" +
-      " \001(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits.Varia" +
-      "ble\022#\n\013return_type\030\003 \001(\0132\016.joelbits.Type" +
-      "\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier\022" +
-      "\'\n\017exception_types\030\005 \003(\0132\016.joelbits.Type" +
-      "\022*\n\014body_content\030\006 \003(\0132\024.joelbits.Expres" +
-      "sion\022\'\n\nstatements\030\007 \003(\0132\023.joelbits.Stat" +
-      "ement\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type" +
-      "\030\002 \001(\0162\037.joelbits.Modifier.ModifierType\022" +
-      "\032\n\022members_and_values\030\003 \003(\t\0225\n\nvisibilit" +
-      "y\030\004 \001(\0162!.joelbits.Modifier.VisibilityTy" +
-      "pe\022\r\n\005other\030\005 \001(\t\"p\n\014ModifierType\022\014\n\010ABS" +
-      "TRACT\020\000\022\016\n\nANNOTATION\020\001\022\t\n\005FINAL\020\002\022\n\n\006ST" +
-      "ATIC\020\003\022\020\n\014SYNCHRONIZED\020\004\022\016\n\nVISIBILITY\020\005" +
-      "\022\t\n\005OTHER\020\006\"G\n\016VisibilityType\022\r\n\tNAMESPA" +
-      "CE\020\000\022\n\n\006PUBLIC\020\001\022\r\n\tPROTECTED\020\002\022\013\n\007PRIVA" +
-      "TE\020\003\"m\n\tNamespace\022\014\n\004name\030\001 \001(\t\022+\n\014decla" +
-      "rations\030\002 \003(\0132\025.joelbits.Declaration\022%\n\t" +
-      "modifiers\030\003 \003(\0132\022.joelbits.Modifier\"\210\001\n\010" +
-      "Variable\022\014\n\004name\030\001 \001(\t\022\034\n\004type\030\002 \001(\0132\016.j" +
-      "oelbits.Type\022)\n\013initializer\030\003 \001(\0132\024.joel" +
-      "bits.Expression\022%\n\tmodifiers\030\004 \003(\0132\022.joe" +
-      "lbits.Modifier\"=\n\004Type\022\014\n\004name\030\001 \001(\t\022\'\n\004" +
-      "type\030\002 \001(\0162\031.joelbits.DeclarationType*l\n" +
-      "\017DeclarationType\022\t\n\005CLASS\020\000\022\r\n\tANONYMOUS" +
-      "\020\001\022\016\n\nANNOTATION\020\002\022\r\n\tINTERFACE\020\003\022\013\n\007GEN" +
-      "ERIC\020\004\022\010\n\004ENUM\020\005\022\t\n\005OTHER\020\006B(\n\033joelbits." +
-      "model.ast.protobufB\tASTProtosb\006proto3"
+      "its.Modifier\022\022\n\nis_postfix\030\010 \001(\010\"\267\001\n\016Exp" +
+      "ressionType\022\013\n\007LITERAL\020\000\022\007\n\003NEW\020\001\022\n\n\006ASS" +
+      "IGN\020\002\022\t\n\005OTHER\020\003\022\017\n\013TYPECOMPARE\020\004\022\030\n\024VAR" +
+      "IABLE_DECLARATION\020\005\022\016\n\nMETHODCALL\020\006\022\010\n\004C" +
+      "AST\020\007\022\017\n\013CONDITIONAL\020\010\022\020\n\014RETURN_VALUE\020\t" +
+      "\022\020\n\014FIELD_ACCESS\020\n\"\344\002\n\tStatement\022/\n\004type" +
+      "\030\001 \001(\0162!.joelbits.Statement.StatementTyp" +
+      "e\022)\n\013expressions\030\002 \003(\0132\024.joelbits.Expres" +
+      "sion\022\'\n\tcondition\030\003 \001(\0132\024.joelbits.Expre" +
+      "ssion\022-\n\017initializations\030\004 \003(\0132\024.joelbit" +
+      "s.Expression\022\'\n\nstatements\030\005 \003(\0132\023.joelb" +
+      "its.Statement\022%\n\007updates\030\006 \003(\0132\024.joelbit" +
+      "s.Expression\"S\n\rStatementType\022\007\n\003FOR\020\000\022\006" +
+      "\n\002DO\020\001\022\006\n\002IF\020\002\022\n\n\006RETURN\020\003\022\t\n\005WHILE\020\004\022\007\n" +
+      "\003TRY\020\005\022\t\n\005OTHER\020\006\"\207\002\n\006Method\022\014\n\004name\030\001 \001" +
+      "(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits.Variabl" +
+      "e\022#\n\013return_type\030\003 \001(\0132\016.joelbits.Type\022%" +
+      "\n\tmodifiers\030\004 \003(\0132\022.joelbits.Modifier\022\'\n" +
+      "\017exception_types\030\005 \003(\0132\016.joelbits.Type\022*" +
+      "\n\014body_content\030\006 \003(\0132\024.joelbits.Expressi" +
+      "on\022\'\n\nstatements\030\007 \003(\0132\023.joelbits.Statem" +
+      "ent\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type\030\002" +
+      " \001(\0162\037.joelbits.Modifier.ModifierType\022\032\n" +
+      "\022members_and_values\030\003 \003(\t\0225\n\nvisibility\030" +
+      "\004 \001(\0162!.joelbits.Modifier.VisibilityType" +
+      "\022\r\n\005other\030\005 \001(\t\"p\n\014ModifierType\022\014\n\010ABSTR" +
+      "ACT\020\000\022\016\n\nANNOTATION\020\001\022\t\n\005FINAL\020\002\022\n\n\006STAT" +
+      "IC\020\003\022\020\n\014SYNCHRONIZED\020\004\022\016\n\nVISIBILITY\020\005\022\t" +
+      "\n\005OTHER\020\006\"G\n\016VisibilityType\022\r\n\tNAMESPACE" +
+      "\020\000\022\n\n\006PUBLIC\020\001\022\r\n\tPROTECTED\020\002\022\013\n\007PRIVATE" +
+      "\020\003\"m\n\tNamespace\022\014\n\004name\030\001 \001(\t\022+\n\014declara" +
+      "tions\030\002 \003(\0132\025.joelbits.Declaration\022%\n\tmo" +
+      "difiers\030\003 \003(\0132\022.joelbits.Modifier\"\210\001\n\010Va" +
+      "riable\022\014\n\004name\030\001 \001(\t\022\034\n\004type\030\002 \001(\0132\016.joe" +
+      "lbits.Type\022)\n\013initializer\030\003 \001(\0132\024.joelbi" +
+      "ts.Expression\022%\n\tmodifiers\030\004 \003(\0132\022.joelb" +
+      "its.Modifier\"=\n\004Type\022\014\n\004name\030\001 \001(\t\022\'\n\004ty" +
+      "pe\030\002 \001(\0162\031.joelbits.DeclarationType*l\n\017D" +
+      "eclarationType\022\t\n\005CLASS\020\000\022\r\n\tANONYMOUS\020\001" +
+      "\022\016\n\nANNOTATION\020\002\022\r\n\tINTERFACE\020\003\022\013\n\007GENER" +
+      "IC\020\004\022\010\n\004ENUM\020\005\022\t\n\005OTHER\020\006B(\n\033joelbits.mo" +
+      "del.ast.protobufB\tASTProtosb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15008,7 +15082,7 @@ public final class ASTProtos {
     internal_static_joelbits_Expression_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_joelbits_Expression_descriptor,
-        new java.lang.String[] { "Type", "Literal", "Method", "Variable", "MethodArguments", "VariableDeclarations", "Annotation", });
+        new java.lang.String[] { "Type", "Literal", "Method", "Variable", "MethodArguments", "VariableDeclarations", "Annotation", "IsPostfix", });
     internal_static_joelbits_Statement_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_joelbits_Statement_fieldAccessorTable = new
