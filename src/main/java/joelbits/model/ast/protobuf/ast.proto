@@ -60,6 +60,7 @@ message Statement {
         WHILE = 4;
         TRY = 5;
         OTHER = 6;
+        BLOCK = 7;
     }
 }
 

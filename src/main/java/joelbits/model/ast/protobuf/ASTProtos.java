@@ -6485,6 +6485,10 @@ public final class ASTProtos {
        * <code>OTHER = 6;</code>
        */
       OTHER(6),
+      /**
+       * <code>BLOCK = 7;</code>
+       */
+      BLOCK(7),
       UNRECOGNIZED(-1),
       ;
 
@@ -6516,6 +6520,10 @@ public final class ASTProtos {
        * <code>OTHER = 6;</code>
        */
       public static final int OTHER_VALUE = 6;
+      /**
+       * <code>BLOCK = 7;</code>
+       */
+      public static final int BLOCK_VALUE = 7;
 
 
       public final int getNumber() {
@@ -6543,6 +6551,7 @@ public final class ASTProtos {
           case 4: return WHILE;
           case 5: return TRY;
           case 6: return OTHER;
+          case 7: return BLOCK;
           default: return null;
         }
       }
@@ -15578,43 +15587,44 @@ public final class ASTProtos {
       "\020\002\022\t\n\005OTHER\020\003\022\017\n\013TYPECOMPARE\020\004\022\030\n\024VARIAB" +
       "LE_DECLARATION\020\005\022\016\n\nMETHODCALL\020\006\022\010\n\004CAST" +
       "\020\007\022\017\n\013CONDITIONAL\020\010\022\020\n\014RETURN_VALUE\020\t\022\020\n" +
-      "\014FIELD_ACCESS\020\n\"\344\002\n\tStatement\022/\n\004type\030\001 " +
+      "\014FIELD_ACCESS\020\n\"\357\002\n\tStatement\022/\n\004type\030\001 " +
       "\001(\0162!.joelbits.Statement.StatementType\022)" +
       "\n\013expressions\030\002 \003(\0132\024.joelbits.Expressio" +
       "n\022\'\n\tcondition\030\003 \001(\0132\024.joelbits.Expressi" +
       "on\022-\n\017initializations\030\004 \003(\0132\024.joelbits.E" +
       "xpression\022\'\n\nstatements\030\005 \003(\0132\023.joelbits" +
       ".Statement\022%\n\007updates\030\006 \003(\0132\024.joelbits.E" +
-      "xpression\"S\n\rStatementType\022\007\n\003FOR\020\000\022\006\n\002D" +
+      "xpression\"^\n\rStatementType\022\007\n\003FOR\020\000\022\006\n\002D" +
       "O\020\001\022\006\n\002IF\020\002\022\n\n\006RETURN\020\003\022\t\n\005WHILE\020\004\022\007\n\003TR" +
-      "Y\020\005\022\t\n\005OTHER\020\006\"\207\002\n\006Method\022\014\n\004name\030\001 \001(\t\022" +
-      "%\n\targuments\030\002 \003(\0132\022.joelbits.Variable\022#" +
-      "\n\013return_type\030\003 \001(\0132\016.joelbits.Type\022%\n\tm" +
-      "odifiers\030\004 \003(\0132\022.joelbits.Modifier\022\'\n\017ex" +
-      "ception_types\030\005 \003(\0132\016.joelbits.Type\022*\n\014b" +
-      "ody_content\030\006 \003(\0132\024.joelbits.Expression\022" +
-      "\'\n\nstatements\030\007 \003(\0132\023.joelbits.Statement" +
-      "\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-\n\004type\030\002 \001(" +
-      "\0162\037.joelbits.Modifier.ModifierType\022\032\n\022me" +
-      "mbers_and_values\030\003 \003(\t\0225\n\nvisibility\030\004 \001" +
-      "(\0162!.joelbits.Modifier.VisibilityType\022\r\n" +
-      "\005other\030\005 \001(\t\"p\n\014ModifierType\022\014\n\010ABSTRACT" +
-      "\020\000\022\016\n\nANNOTATION\020\001\022\t\n\005FINAL\020\002\022\n\n\006STATIC\020" +
-      "\003\022\020\n\014SYNCHRONIZED\020\004\022\016\n\nVISIBILITY\020\005\022\t\n\005O" +
-      "THER\020\006\"G\n\016VisibilityType\022\r\n\tNAMESPACE\020\000\022" +
-      "\n\n\006PUBLIC\020\001\022\r\n\tPROTECTED\020\002\022\013\n\007PRIVATE\020\003\"" +
-      "m\n\tNamespace\022\014\n\004name\030\001 \001(\t\022+\n\014declaratio" +
-      "ns\030\002 \003(\0132\025.joelbits.Declaration\022%\n\tmodif" +
-      "iers\030\003 \003(\0132\022.joelbits.Modifier\"\210\001\n\010Varia" +
-      "ble\022\014\n\004name\030\001 \001(\t\022\034\n\004type\030\002 \001(\0132\016.joelbi" +
-      "ts.Type\022)\n\013initializer\030\003 \001(\0132\024.joelbits." +
-      "Expression\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits" +
-      ".Modifier\"=\n\004Type\022\014\n\004name\030\001 \001(\t\022\'\n\004type\030" +
-      "\002 \001(\0162\031.joelbits.DeclarationType*l\n\017Decl" +
-      "arationType\022\t\n\005CLASS\020\000\022\r\n\tANONYMOUS\020\001\022\016\n" +
-      "\nANNOTATION\020\002\022\r\n\tINTERFACE\020\003\022\013\n\007GENERIC\020" +
-      "\004\022\010\n\004ENUM\020\005\022\t\n\005OTHER\020\006B(\n\033joelbits.model" +
-      ".ast.protobufB\tASTProtosb\006proto3"
+      "Y\020\005\022\t\n\005OTHER\020\006\022\t\n\005BLOCK\020\007\"\207\002\n\006Method\022\014\n\004" +
+      "name\030\001 \001(\t\022%\n\targuments\030\002 \003(\0132\022.joelbits" +
+      ".Variable\022#\n\013return_type\030\003 \001(\0132\016.joelbit" +
+      "s.Type\022%\n\tmodifiers\030\004 \003(\0132\022.joelbits.Mod" +
+      "ifier\022\'\n\017exception_types\030\005 \003(\0132\016.joelbit" +
+      "s.Type\022*\n\014body_content\030\006 \003(\0132\024.joelbits." +
+      "Expression\022\'\n\nstatements\030\007 \003(\0132\023.joelbit" +
+      "s.Statement\"\344\002\n\010Modifier\022\014\n\004name\030\001 \001(\t\022-" +
+      "\n\004type\030\002 \001(\0162\037.joelbits.Modifier.Modifie" +
+      "rType\022\032\n\022members_and_values\030\003 \003(\t\0225\n\nvis" +
+      "ibility\030\004 \001(\0162!.joelbits.Modifier.Visibi" +
+      "lityType\022\r\n\005other\030\005 \001(\t\"p\n\014ModifierType\022" +
+      "\014\n\010ABSTRACT\020\000\022\016\n\nANNOTATION\020\001\022\t\n\005FINAL\020\002" +
+      "\022\n\n\006STATIC\020\003\022\020\n\014SYNCHRONIZED\020\004\022\016\n\nVISIBI" +
+      "LITY\020\005\022\t\n\005OTHER\020\006\"G\n\016VisibilityType\022\r\n\tN" +
+      "AMESPACE\020\000\022\n\n\006PUBLIC\020\001\022\r\n\tPROTECTED\020\002\022\013\n" +
+      "\007PRIVATE\020\003\"m\n\tNamespace\022\014\n\004name\030\001 \001(\t\022+\n" +
+      "\014declarations\030\002 \003(\0132\025.joelbits.Declarati" +
+      "on\022%\n\tmodifiers\030\003 \003(\0132\022.joelbits.Modifie" +
+      "r\"\210\001\n\010Variable\022\014\n\004name\030\001 \001(\t\022\034\n\004type\030\002 \001" +
+      "(\0132\016.joelbits.Type\022)\n\013initializer\030\003 \001(\0132" +
+      "\024.joelbits.Expression\022%\n\tmodifiers\030\004 \003(\013" +
+      "2\022.joelbits.Modifier\"=\n\004Type\022\014\n\004name\030\001 \001" +
+      "(\t\022\'\n\004type\030\002 \001(\0162\031.joelbits.DeclarationT" +
+      "ype*l\n\017DeclarationType\022\t\n\005CLASS\020\000\022\r\n\tANO" +
+      "NYMOUS\020\001\022\016\n\nANNOTATION\020\002\022\r\n\tINTERFACE\020\003\022" +
+      "\013\n\007GENERIC\020\004\022\010\n\004ENUM\020\005\022\t\n\005OTHER\020\006B(\n\033joe" +
+      "lbits.model.ast.protobufB\tASTProtosb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
