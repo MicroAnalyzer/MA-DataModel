@@ -14,11 +14,11 @@ import java.time.ZoneId;
 import java.util.*;
 
 /**
- * Maps a Project protocol buffer message into its Project model representation.
+ * Maps a Project protocol buffer message into its Project model representation. The Project model is
+ * used in analyses performed by the framework.
  */
-public class ProjectConverter {
-
-    public static Project convert(byte[] project) throws InvalidProtocolBufferException {
+public final class ProjectConverter {
+    public Project convert(byte[] project) throws InvalidProtocolBufferException {
         ProjectProtos.Project parsedProject = ProjectProtos.Project.parseFrom(project);
 
         List<CodeRepository> repositories = new ArrayList<>();
@@ -35,7 +35,7 @@ public class ProjectConverter {
         return new Project(parsedProject.getId(), parsedProject.getName(), type, repositories, parsedProject.getUrl(), createdAt, languages, forks, watchers);
     }
 
-    private static CodeRepository convertRepository(ProjectProtos.CodeRepository repository) {
+    private CodeRepository convertRepository(ProjectProtos.CodeRepository repository) {
         RepositoryType type = RepositoryType.valueOf(repository.getType().name());
 
         List<Revision> revisions = new ArrayList<>();
@@ -46,7 +46,7 @@ public class ProjectConverter {
         return new CodeRepository(repository.getUrl(), type, revisions);
     }
 
-    private static Revision convertRevision(ProjectProtos.Revision revision) {
+    private Revision convertRevision(ProjectProtos.Revision revision) {
         LocalDateTime commitDate = getLocalDateTime(revision.getCommitDate().getSeconds());
         Person committer = convertPerson(revision.getCommitter());
 
@@ -58,16 +58,16 @@ public class ProjectConverter {
         return new Revision(revision.getId(), commitDate, committer, changedFiles, revision.getLog());
     }
 
-    private static LocalDateTime getLocalDateTime(long epochSeconds) {
+    private LocalDateTime getLocalDateTime(long epochSeconds) {
         Instant instant = Instant.ofEpochSecond(epochSeconds);
         return LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
     }
 
-    private static Person convertPerson(ProjectProtos.Person person) {
+    private Person convertPerson(ProjectProtos.Person person) {
         return new Person(person.getUsername(), person.getEmail());
     }
 
-    private static ChangedFile convertChangedFile(ProjectProtos.ChangedFile file) {
+    private ChangedFile convertChangedFile(ProjectProtos.ChangedFile file) {
         ChangeType changeType = ChangeType.valueOf(file.getChange().name());
         SourceCodeFileType type = SourceCodeFileType.valueOf(file.getType().name());
 
