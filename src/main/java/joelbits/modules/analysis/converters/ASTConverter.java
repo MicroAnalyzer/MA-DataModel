@@ -145,6 +145,9 @@ public final class ASTConverter {
         }
 
         List<Expression> bodyContent = new ArrayList<>();
+        for (ASTProtos.Expression expression : method.getBodyContentList()) {
+            bodyContent.add(convertExpression(expression));
+        }
 
         return new Method(method.getName(), arguments, convertType(method.getReturnType()), modifiers, bodyContent, statements);
     }
@@ -203,6 +206,34 @@ public final class ASTConverter {
     }
 
     private Statement convertNestedStatement(ASTProtos.Statement statement) {
+        StatementType type = StatementType.valueOf(statement.getType().name());
+
+        List<Expression> expressions = new ArrayList<>();
+        for (ASTProtos.Expression expression : statement.getExpressionsList()) {
+            expressions.add(convertExpression(expression));
+        }
+
+        List<Expression> initializations = new ArrayList<>();
+        for (ASTProtos.Expression initialization : statement.getInitializationsList()) {
+            initializations.add(convertExpression(initialization));
+        }
+
+        List<Expression> updates = new ArrayList<>();
+        for (ASTProtos.Expression update : statement.getUpdatesList()) {
+            updates.add(convertExpression(update));
+        }
+
+        List<Statement> nestedStatements = new ArrayList<>();
+        for (ASTProtos.Statement nestedStatement : statement.getStatementsList()) {
+            nestedStatements.add(convertNestedNestedStatement(nestedStatement));
+        }
+
+        Expression condition = convertExpression(statement.getCondition());
+
+        return new Statement(type, expressions, condition, nestedStatements, initializations, updates);
+    }
+
+    private Statement convertNestedNestedStatement(ASTProtos.Statement statement) {
         StatementType type = StatementType.valueOf(statement.getType().name());
 
         List<Expression> expressions = new ArrayList<>();
